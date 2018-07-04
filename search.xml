@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android Mac 环境配置]]></title>
+    <url>%2F2018%2F07%2F04%2Fandroid-mac%2F</url>
+    <content type="text"><![CDATA[Java环境1）下载安装mac系统一般默认会安装jdk 1.6,路径为/System/Library/Java/JavaVirtualMachines/1.6.0.jdk,但有时候可能需要下载更高版本的jdk官网下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html2）配置配置方式为 vim ~/.bash_profile,增加或修改export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Homeexport JAVA_HOMEexport PATH=$PATH:$JAVA_HOME最后重新加载profilesource ~/.bash_profile3）验证java -version可以查看到当前版本信息代表安装配置成功。Android Studio1） 下载安装官网下载：http://developer.android.com/tools/studio/index.html得到的dmg文件直接拖到Applications安装，注意安装路径]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+      <tags>
+        <tag>android,mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[冷月当空，雪魂飞舞]]></title>
     <url>%2F2018%2F07%2F04%2Fhello-world%2F</url>
     <content type="text"><![CDATA[欢迎来到冷月阁简介这是一个小小的博客进行必要的知识储备，现如今是信息时代，知识更新迅速，需要不断学习，才能保证不被时代丢弃，我是一个程序员，所以这里会是我各种技术文档的存放地，当然也可能会存放其他文章，视情况而定，所以出现其他类文章，大家不要惊讶，哈哈。]]></content>

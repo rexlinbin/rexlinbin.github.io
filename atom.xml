@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rexlinbin.github.io/"/>
-  <updated>2018-07-04T08:58:08.061Z</updated>
+  <updated>2018-07-04T09:26:47.755Z</updated>
   <id>https://rexlinbin.github.io/</id>
   
   <author>
@@ -17,19 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android Mac 环境配置</title>
+    <link href="https://rexlinbin.github.io/2018/07/04/android-mac/"/>
+    <id>https://rexlinbin.github.io/2018/07/04/android-mac/</id>
+    <published>2018-07-04T09:16:11.000Z</published>
+    <updated>2018-07-04T09:26:47.755Z</updated>
+    
+    <content type="html"><![CDATA[<!-- build time:Wed Jul 04 2018 17:29:59 GMT+0800 (CST) --><h2 id="Java环境"><a href="#Java环境" class="headerlink" title="Java环境"></a>Java环境</h2><p>1）下载安装</p><p>mac系统一般默认会安装jdk 1.6,路径为/System/Library/Java/JavaVirtualMachines/1.6.0.jdk,但有时候可能需要下载更高版本的jdk</p><p>官网下载地址：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p><p>2）配置</p><p>配置方式为 vim ~/.bash_profile,增加或修改</p><p>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home</p><p>export JAVA_HOME</p><p>export PATH=$PATH:$JAVA_HOME</p><p>最后重新加载profile</p><p>source ~/.bash_profile</p><p>3）验证</p><p>java -version</p><p>可以查看到当前版本信息代表安装配置成功。</p><h2 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h2><p>1） 下载安装</p><p>官网下载：<a href="http://developer.android.com/tools/studio/index.html" target="_blank" rel="noopener">http://developer.android.com/tools/studio/index.html</a></p><p>得到的dmg文件直接拖到Applications安装，注意安装路径</p><!-- rebuild by neat -->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!-- build time:Wed Jul 04 2018 17:29:59 GMT+0800 (CST) --&gt;&lt;h2 id=&quot;Java环境&quot;&gt;&lt;a href=&quot;#Java环境&quot; class=&quot;headerlink&quot; title=&quot;Java环境&quot;&gt;&lt;/a&gt;Java环境&lt;/h
+      
+    
+    </summary>
+    
+      <category term="android" scheme="https://rexlinbin.github.io/categories/android/"/>
+    
+    
+      <category term="android,mac" scheme="https://rexlinbin.github.io/tags/android-mac/"/>
+    
+  </entry>
+  
+  <entry>
     <title>冷月当空，雪魂飞舞</title>
     <link href="https://rexlinbin.github.io/2018/07/04/hello-world/"/>
     <id>https://rexlinbin.github.io/2018/07/04/hello-world/</id>
     <published>2018-07-04T08:58:08.061Z</published>
     <updated>2018-07-04T08:58:08.061Z</updated>
     
-    <content type="html"><![CDATA[<!-- build time:Wed Jul 04 2018 17:04:46 GMT+0800 (CST) --><p>欢迎来到冷月阁</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="这是一个小小的博客"><a href="#这是一个小小的博客" class="headerlink" title="这是一个小小的博客"></a>这是一个小小的博客</h3><p>进行必要的知识储备，现如今是信息时代，知识更新迅速，需要不断学习，才能保证不被时代丢弃，我是一个程序员，所以这里会是我各种技术文档的存放地，当然也可能会存放其他文章，视情况而定，所以出现其他类文章，大家不要惊讶，哈哈。</p><!-- rebuild by neat -->]]></content>
+    <content type="html"><![CDATA[<!-- build time:Wed Jul 04 2018 17:18:22 GMT+0800 (CST) --><p>欢迎来到冷月阁</p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="这是一个小小的博客"><a href="#这是一个小小的博客" class="headerlink" title="这是一个小小的博客"></a>这是一个小小的博客</h3><p>进行必要的知识储备，现如今是信息时代，知识更新迅速，需要不断学习，才能保证不被时代丢弃，我是一个程序员，所以这里会是我各种技术文档的存放地，当然也可能会存放其他文章，视情况而定，所以出现其他类文章，大家不要惊讶，哈哈。</p><!-- rebuild by neat -->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;!-- build time:Wed Jul 04 2018 17:04:46 GMT+0800 (CST) --&gt;&lt;p&gt;欢迎来到冷月阁&lt;/p&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;
+        &lt;!-- build time:Wed Jul 04 2018 17:18:22 GMT+0800 (CST) --&gt;&lt;p&gt;欢迎来到冷月阁&lt;/p&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;
       
     
     </summary>
