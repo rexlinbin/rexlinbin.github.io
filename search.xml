@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android 脱壳工具]]></title>
+    <url>%2F2018%2F08%2F04%2Fandroid-unpack%2F</url>
+    <content type="text"><![CDATA[drizzleDumper介绍drizzleDumper是一款基于内存搜索的Android脱壳工具。是根据strazzere大神的android-unpacker优化改造而成，这是一款ndk写的动态Android脱壳的工具，原理简单来说就是ptrace，然后在内存中匹配特征码和dex的magic，最后dump到文件。apk文件结构dex文件头结构drizzleDumper修改优化的地方：1.android-unpacker基本上就是匹配odex magic的函数时（下图），而drizzleDumper不管odex了，专心匹配dex的magic。2.android-unpacker用pread（下图），而drizzleDumper换了read和lseek，具体就不说为啥了，这是非常重要的一点。3.直接抛弃了android-unpacker中的壳的特征匹配这一整块儿内容。4.android-unpacker只匹配和dump一次，而drizzleDumper引入了双循环机制，这点对脱壳成功也非常重要。5.android-unpacker在peek_memory（下图）中进行magic匹配，drizzleDumper改了逻辑，换了一种匹配方式。6.另外还增加了一匹配种方法，来增强匹配的成功率。7.引入了wait_times机制（很无奈，等待真正的程序dex加载到内存）8.其他..drizzleDumper使用1.获取root权限执行adb root命令 或者 adb shell su2.将drizzleDumper文件adb push到/data/local/tmp路径下3.安装apkadb install apk4.运行apk5.执行脱壳工具adb shell ./data/local/tmp drizzleDumper apk包名 26.dump下来的dex文件会存到/data/local/tmp路径下，将文件下载下来7.剩下就可以通过dex2jar等工具，解析源码了。drizzleDumper实战测试]]></content>
+      <categories>
+        <category>android</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>unpack，工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 常用命令]]></title>
     <url>%2F2018%2F07%2F16%2Flinux-command%2F</url>
     <content type="text"><![CDATA[Linux路径linux绝对路径以”/“开头显示当前文件列表ll或ls复制文件如果dir2目录不存在，则可以直接使用cp -r dir1 dir2 即可。如果dir2目录已存在，则需要使用cp -r dir1/. dir2统计某文件夹下文件的个数ls -l |grep “^-“|wc -l统计某文件夹下目录的个数ls -l |grep “^ｄ”|wc -l统计文件夹下文件的个数，包括子文件夹里的ls -lR|grep “^-“|wc -l查看文件夹下文件大小du -sh *文件重命名mv abc.txt 1234.txt文件删除find lib -type f -name “*.0” -exec rm -f {} \; 查找末尾.0的文件删除rm -f 强制删除文件rm -rf 向下递归删除文件夹打开文件cat [-n] 文件名 -n代表显示行号设置权限chmod -R 755 文件名运行jar和停止jarjava -jar jar包 运行jar包 当前ssh窗口被锁定，可按CTRL + C打断程序运行，或直接关闭窗口，程序 退出java -jar jar包 &amp; &amp;代表在后台运行。特定：当前ssh窗口不被锁定，但是当窗口关闭时，程序中止运行。nohup java -jar jar包 &amp; nohup 意思是不挂断运行命令,当账户退出或终端关闭时,程序仍然运行当用 nohup 命令执行作业时，缺省情况下该作业的所有输出被重定向到nohup.out的文件中，除非另外指定了输出文件。nohup java -jar jar包 &gt;temp.txt &amp; command &gt;out.file是将command的输出重定向到out.file文件，即输出内容不打印到屏幕上，而是输出到out.file文件中。jobs 查看后台运行任务fg 任务号 调到前台ps aux|grep jar包 查看jar包进程kill -9 查到的进程 停止jar运行查看系统资源占用free －b －s5 每5秒刷新 查看内存top -c 每5秒刷新df 查看磁盘空间glances 查看系统工具查看日志linux查看日志文件内容命令tail、cat、tac、head、echotail -f test.log你会看到屏幕不断有内容被打印出来. 这时候中断第一个进程Ctrl-C,linux 如何显示一个文件的某几行(中间几行)从第3000行开始，显示1000行。即显示3000~3999行cat filename | tail -n +3000 | head -n 1000显示1000行到3000行cat filename| head -n 3000 | tail -n +1000*注意两种方法的顺序分解：tail -n 1000：显示最后1000行tail -n +1000：从1000行开始显示，显示1000行以后的head -n 1000：显示前面1000行用sed命令sed -n ‘5,10p’ filename 这样你就可以只查看文件的第5行到第10行。例：cat mylog.log | tail -n 1000 #输出mylog.log 文件最后一千行cat主要有三大功能：1.一次显示整个文件。$ cat filename2.从键盘创建一个文件。$ cat &gt; filename只能创建新文件,不能编辑已有文件.3.将几个文件合并为一个文件： $cat file1 file2 &gt; file参数：-n 或 –number 由 1 开始对所有输出的行数编号-b 或 –number-nonblank 和 -n 相似，只不过对于空白行不编号-s 或 –squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行-v 或 –show-nonprinting例：把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里cat -n textfile1 &gt; textfile2把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。cat -b textfile1 textfile2 &gt;&gt; textfile3把test.txt文件扔进垃圾箱，赋空值test.txtcat /dev/null &gt; /etc/test.txt注意：&gt;意思是创建，&gt;&gt;是追加。千万不要弄混了。tac (反向列示)tac 是将 cat 反写过来，所以他的功能就跟 cat 相反， cat 是由第一行到最后一行连续显示在萤幕上，而 tac 则是由最后一行到第一行反向在萤幕上显示出来！在Linux中echo命令用来在标准输出上显示一段字符，比如：echo “the echo command test!”这个就会输出“the echo command test!”这一行文字！echo “the echo command test!”&gt;a.sh这个就会在a.sh文件中输出“the echo command test!”这一行文字！该命令的一般格式为： echo [ -n ] 字符串其中选项n表示输出文字后不换行；字符串能加引号，也能不加引号。用echo命令输出加引号的字符串时，将字符串原样输出；用echo命令输出不加引号的字符串时，将字符串中的各个单词作为字符串输出，各字符串之间用一个空格分割。退出命令qctrl cXShell5工具上传文件到linux-b 以二进制方式，默认为文本方式。-e 对所有控制字符转义。如果要保证上传的文件内容在服务器端保存之后与原始文件一致，最好同时设置这两个标志，如下所示方式使用：rz –bey下载一个文件sz filename下载多个文件sz filename1 filename2下载dir目录下的文件，不包括文件夹sz dir/*]]></content>
